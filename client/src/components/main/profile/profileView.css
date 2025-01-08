@@ -1,0 +1,50 @@
+.profile-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  position: relative;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+.saved-questions-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.saved-questions-list li {
+  padding: 8px;
+  border-bottom: 1px solid #bbb;
+}
+
+.saved-questions-list li:last-child {
+  border-bottom: none;
+}
+
+.question_list:last-child {
+  border-bottom: #000000 1px dashed;
+}
+
+.edit-profile-button {
+  background: #3090e2;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-profile-button:hover {
+  background-color: #0056b3;
+}

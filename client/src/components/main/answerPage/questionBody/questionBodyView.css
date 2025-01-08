@@ -1,0 +1,31 @@
+.questionBody {
+  display: flex;
+  flex-direction: row;
+  border-left: 4px solid green;
+  /* justify-content: space-between;  */
+  border-bottom: #bbb 1px solid;
+}
+
+.questionWrapper {
+  border-top: #bbb 1px solid;
+  border-bottom: #bbb 1px solid;
+}
+
+.answer_question_view {
+  width: 15%;
+}
+
+.answer_question_text {
+  width: 60%;
+}
+
+.answer_question_right {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+}
+
+.save-button {
+  width: 100px;
+  height: 60px;
+}

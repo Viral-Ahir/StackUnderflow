@@ -1,0 +1,14 @@
+.commentWrapper {
+  padding: 5px;
+  margin-left: 40px;
+}
+
+.comment {
+  padding: 5px;
+  padding-right: 20px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #bbb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
