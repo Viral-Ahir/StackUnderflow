@@ -37,21 +37,27 @@ export default function Comments({
   return (
     <div className="commentWrapper">
       {commentList.map((comment, index) => (
-        <div key={index} className="comment">
-          <div className="commentText">{comment.text}</div>
-          <div className="commentUser">{comment.commented_by.username}</div>
+        <div
+          key={index}
+          className="text-s transition-colors w-full min-w-full comment border-b"
+        >
+          <div>{comment.text}</div>
+          <div> {comment.commented_by.username}</div>
         </div>
       ))}
       <div className="commentInput">
         <input
           type="text"
-          className="commentInputBox"
+          className="h-6 rounded-md border-input  px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 mt-2 mr-2 no-focus light-border-2 text-light700 min-h-[30px] border"
           placeholder="Add a comment"
           value={commentDescription}
           onChange={(e) => setCommentDescription(e.target.value)}
         />
-        <button className="commentButton" onClick={handlePostCommentClick}>
-          Post Comment
+        <button
+          className="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary hover:bg-primary/90 h-8 btn light-border-2 gap-1.5 rounded-md px-4 py-2.5 shadow-none"
+          onClick={handlePostCommentClick}
+        >
+          Post
         </button>
       </div>
     </div>

@@ -9,7 +9,6 @@ import NewAnswerPageClass from "./main/routing/newAnswer";
 import ProfilePageClass from "./main/routing/profile";
 import EditProfilePageClass from "./main/routing/editProfile";
 import { PageInstanceType } from "./types/pageInstanceType";
-
 /**
  * The main component for the Fake StackOverflow app
  * defines the search state and the main title state
@@ -85,6 +84,11 @@ const FakeStackOverflow = () => {
    * Function to handle new answers
    */
   const handleNewAnswer = () => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("Please log in to post Answer.");
+      return;
+    }
     setPageInstance(new NewAnswerPageClass(commonProps));
   };
 
@@ -149,6 +153,7 @@ const FakeStackOverflow = () => {
         setQuestionPage={setQuestionPage}
         setPageInstance={setPageInstance}
         commonProps={commonProps}
+        pageInstance={pageInstance}
       />
       <Main pageInstance={pageInstance} commonProps={commonProps} />
     </>

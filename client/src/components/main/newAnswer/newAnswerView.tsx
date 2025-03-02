@@ -1,4 +1,3 @@
-import "./newAnswerView.css";
 import Form from "../baseComponents/form/formView";
 import Input from "../baseComponents/input/inputView";
 import Textarea from "../baseComponents/textarea/textAreaView";
@@ -28,28 +27,39 @@ const NewAnswer = ({ qid, handleAnswer }: NewAnswerProps) => {
     useNewAnswer(qid, handleAnswer);
 
   return (
-    <Form>
-      <Input
-        title={"Username"}
-        id={"answerUsernameInput"}
-        val={usrn}
-        setState={setUsrn}
-        err={usrnErr}
-      />
-      <Textarea
-        title={"Answer Text"}
-        id={"answerTextInput"}
-        val={text}
-        setState={setText}
-        err={textErr}
-      />
-      <div className="btn_indicator_container">
-        <button className="form_postBtn" onClick={postAnswer}>
-          Post Answer
-        </button>
-        <div className="mandatory_indicator">* indicates mandatory fields</div>
+    <>
+      <h1 className="h1-bold text-dark100_light900">Add new Answer</h1>
+      <div className="mt-9">
+        <Form>
+          <div className="space-y-2 flex w-full flex-col">
+            <Input
+              title={"Username"}
+              id={"answerUsernameInput"}
+              val={usrn}
+              setState={setUsrn}
+              err={usrnErr}
+            />
+          </div>
+          <div className="space-y-2 flex w-full flex-col">
+            <Textarea
+              title={"Answer Text"}
+              id={"answerTextInput"}
+              val={text}
+              setState={setText}
+              err={textErr}
+            />
+          </div>
+          <div>
+            <button
+              className="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 primary-gradient mb-5 w-fit !text-light-900"
+              onClick={postAnswer}
+            >
+              Post Answer
+            </button>
+          </div>
+        </Form>
       </div>
-    </Form>
+    </>
   );
 };
 

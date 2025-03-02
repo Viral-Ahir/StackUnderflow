@@ -39,21 +39,38 @@ const ProfileView: React.FC<ProfileViewProps> = ({
   const { username, bio, savedQuestions, message } = useProfile();
 
   return (
-    <div className="profile-container">
-      <div className="header-section">
-        <h2>{username || "Profile"}</h2>
-        <button className="edit-profile-button" onClick={handleEditProfile}>
-          Edit Profile
-        </button>
+    <>
+      <div className="flex flex-col-reverse items-start justify-between sm:flex-row">
+        <div className="flex flex-col items-start gap-4 lg:flex-row">
+          <img
+            src="/Assets/images/profile.jpg"
+            alt="Profile Pic"
+            className="w-24 h-24 rounded-full"
+          />
+          <div className="mt-2">
+            {message && <p className="message mt-4">{message}</p>}
+            <h2 className="h2-bold text-dark100_light900">{username}</h2>
+            {bio && (
+              <p className="paragraph-regular text-dark400_light800 mt-4">
+                Bio: {bio}
+              </p>
+            )}
+          </div>
+        </div>
+
+        <div className="flex justify-end max-sm:mb-5 max-sm:w-full sm:mt-3">
+          <button
+            className="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary hover:bg-primary/90 h-10 paragraph-medium btn-secondary text-dark300_light900 min-h-[46px] min-w-[175px] px-4 py-3"
+            onClick={handleEditProfile}
+          >
+            Edit Profile
+          </button>
+        </div>
       </div>
-      {message && <p className="message">{message}</p>}
       <div className="profile-details">
-        <p>
-          <strong>Bio:</strong> {bio || "No bio available"}
-        </p>
-        <h3>Saved Questions</h3>
+        <div className="h2-bold text_light900 mt-10">Saved Questions</div>
         {savedQuestions.length > 0 ? (
-          <div id="question_list" className="question_list">
+          <div id="question_list" className="mt-10 flex flex-col gap-6">
             {savedQuestions.map((q, idx) => (
               <Question
                 q={q}
@@ -64,12 +81,28 @@ const ProfileView: React.FC<ProfileViewProps> = ({
             ))}
           </div>
         ) : (
-          <p id="no_question_list" className="no_question_list">
-            No saved questions
-          </p>
+          <div id="no_question_list" className="no_question_list">
+            <div className="mt-10 flex w-full flex-col items-center justify-center">
+              <img
+                src="./assets/images/light-illustration.png"
+                alt="Not-result-page"
+                width={270}
+                height={200}
+                className="block object-contain dark:hidden"
+              />
+              <h2 className="h2-bold text-dark200_light900 mt-8">
+                There is No Saved question to show
+              </h2>
+              <p className="body-regular text-dark500_light700 my-3.5 max-w-md text-center">
+                Be the first to break the silence! 🚀 Ask a Question and
+                kickstart the discussion. our query could be the next big thing
+                others learn from. Get involved! 💡
+              </p>
+            </div>
+          </div>
         )}
       </div>
-    </div>
+    </>
   );
 };
 

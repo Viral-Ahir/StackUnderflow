@@ -32,7 +32,7 @@ export const validateUserIdMiddleware = (
       "Validation Failed",
       `Invalid or missing userId. Received: ${userId}`
     );
-    return res.status(401).json({ message: "Unauthorized" });
+    return res.status(401).json({ message: "Log in to continue" });
   }
 
   req.sanitizedUserId = userId;

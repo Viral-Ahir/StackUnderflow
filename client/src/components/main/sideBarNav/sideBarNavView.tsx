@@ -28,33 +28,89 @@ const SideBarNav = ({
   handleSaves,
 }: SideBarNavProps) => {
   return (
-    <div id="sideBarNav" className="sideBarNav">
-      <div
-        id="menu_question"
-        className={`menu_button ${selected === "q" ? "menu_selected" : ""}`}
-        onClick={() => {
-          handleQuestions();
-        }}
-      >
-        Questions
-      </div>
-      <div
-        id="menu_tag"
-        className={`menu_button ${selected === "t" ? "menu_selected" : ""}`}
-        onClick={() => {
-          handleTags();
-        }}
-      >
-        Tags
-      </div>
-      <div
-        id="menu_saves"
-        className={`menu_button ${selected === "s" ? "menu_selected" : ""}`}
-        onClick={() => {
-          handleSaves();
-        }}
-      >
-        Saves
+    <div
+      id="sideBarNav"
+      className="background-light900 light-border pt-32 custom-scrollbar sticky left-0 top-0 flex h-screen flex-col justify-between overflow-y-auto border-r p-6 pt-10 shadow-light-300 max-sm:hidden lg:w-[264px]"
+    >
+      <div className="flex flex-1 flex-col gap-6">
+        <div
+          id="menu_question"
+          className={`${
+            selected === "q"
+              ? "primary-gradient rounded-lg text-light-900"
+              : "text-light900"
+          } flex items-center justify-start bg-transparent p-4 gap-4`}
+          onClick={() => {
+            handleQuestions();
+          }}
+        >
+          <img
+            src="/assets/icons/home.svg"
+            alt="Questions"
+            width={20}
+            height={20}
+            className={`${selected === "q" ? "" : "invert-colors"}`}
+          />
+          <p
+            className={`${
+              selected === "q" ? "base-bold" : "base-medium"
+            }  max-lg:hidden`}
+          >
+            Questions
+          </p>
+        </div>
+        <div
+          id="menu_tag"
+          className={`${
+            selected === "t"
+              ? "primary-gradient rounded-lg text-light-900"
+              : "text-light900"
+          } flex items-center justify-start bg-transparent p-4 gap-4`}
+          onClick={() => {
+            handleTags();
+          }}
+        >
+          <img
+            src="/assets/icons/tag.svg"
+            alt="Tags"
+            width={20}
+            height={20}
+            className={`${selected === "t" ? "" : "invert-colors"}`}
+          />
+          <p
+            className={`${
+              selected === "t" ? "base-bold" : "base-medium"
+            }  max-lg:hidden`}
+          >
+            Tags
+          </p>
+        </div>
+        <div
+          id="menu_tag"
+          className={`${
+            selected === "s"
+              ? "primary-gradient rounded-lg text-light-900"
+              : "text-light900"
+          } flex items-center justify-start bg-transparent p-4 gap-4`}
+          onClick={() => {
+            handleSaves();
+          }}
+        >
+          <img
+            src="/assets/icons/star.svg"
+            alt="Tags"
+            width={20}
+            height={20}
+            className={`${selected === "s" ? "" : "invert-colors"}`}
+          />
+          <p
+            className={`${
+              selected === "s" ? "base-bold" : "base-medium"
+            }  max-lg:hidden`}
+          >
+            Collection
+          </p>
+        </div>
       </div>
     </div>
   );

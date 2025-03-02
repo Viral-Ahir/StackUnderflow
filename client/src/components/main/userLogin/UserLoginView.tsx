@@ -45,10 +45,14 @@ const UserLoginView: React.FC<UserLoginViewProps> = ({ onLogin }) => {
   } = useUserLogin(onLogin);
 
   return (
-    <div className="user-login-container">
-      <h2>Log In to Your Account</h2>
-      {message && <p className="message">{message}</p>}
-      <form onSubmit={handleSubmit} className="user-login-form">
+    <div>
+      <h2 className="box-border text-black m-0 mb-6 font-semibold text-xl leading-[1.5]">
+        Log In to Your Account
+      </h2>
+      {message && (
+        <p className="text-center text-sm text-red-500 mb-6">{message}</p>
+      )}
+      <form onSubmit={handleSubmit} className="user-login-form text-black">
         <div className="form-group">
           <label htmlFor="username">Username:</label>
           <input
@@ -69,7 +73,10 @@ const UserLoginView: React.FC<UserLoginViewProps> = ({ onLogin }) => {
             required
           />
         </div>
-        <button type="submit" className="login-button">
+        <button
+          type="submit"
+          className="primary-gradient m-0 mt-3 px-5 py-2 border-0 outline-none select-none cursor-pointer  text-white rounded-md inline-flex justify-center items-center transition-colors duration-100 font-semibold text-[0.6875rem] tracking-wide leading-none uppercase min-h-[2.25rem] w-full"
+        >
           Log In
         </button>
       </form>

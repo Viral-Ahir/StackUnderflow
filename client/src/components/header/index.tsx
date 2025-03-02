@@ -1,12 +1,14 @@
 import "./index.css";
-// import "./tailwind.css";
-import { useState, ChangeEvent, KeyboardEvent } from "react";
+import { useState, ChangeEvent, KeyboardEvent, ReactNode } from "react";
 import Modal from "react-modal";
 import UserRegistrationView from "../main/userRegistration/UserRegistrationView";
 import UserLoginView from "../main/userLogin/UserLoginView";
 import { QuestionsPageQueryFuntionType } from "../../types/functionTypes";
 import { PageInstanceType } from "../types/pageInstanceType";
 import HomePageClass from "../main/routing/home";
+
+import { Sheet, SheetTrigger, SheetContent, SheetClose } from "../ui/sheet";
+import MobileNav from "../main/mobileNav/MobileNavView";
 
 /**
  * Interface for common properties shared across the application.
@@ -42,6 +44,7 @@ interface CommonProps {
   clickTag: (tname: string) => void;
   handleNewQuestion: () => void;
   handleNewAnswer: () => void;
+  handleSaves: () => void;
 }
 
 /**
@@ -58,6 +61,7 @@ interface HeaderProps {
   setQuestionPage: QuestionsPageQueryFuntionType;
   setPageInstance: (pageInstance: PageInstanceType) => void;
   commonProps: CommonProps;
+  pageInstance: { getContent: () => ReactNode; getSelected: () => string };
 }
 
 Modal.setAppElement("#root");
@@ -75,6 +79,7 @@ const Header = ({
   setQuestionPage,
   setPageInstance,
   commonProps,
+  pageInstance,
 }: HeaderProps): JSX.Element => {
   /**
    * State variables to manage the visibility of the signup and login modals.
@@ -155,13 +160,22 @@ const Header = ({
   return (
     <div
       id="header"
-      className="flex justify-between items-center p-4 bg-light-900 z-50 w-full gap-5 p-6 shadow-light-300 sm:px-12"
+      className="flex-between background-light900_dark200 fixed z-50 w-full gap-5 p-6 shadow-light-300 dark:shadow-none sm:px-12"
     >
-      <div className="h2-bold font-spaceGrotesk text-dark-100 dark:text-light-900 max-sm:hidden">
-        Stack <span className="text-primary-500">Underflow</span>
-      </div>
+      <a href="./" className="flex items-center gap-1">
+        <img
+          src={"/assets/images/site-logo.svg"}
+          width={23}
+          height={23}
+          alt="StackUnderFlow"
+        />
+        <p className="h2-bold ml-2 font-spaceGrotesk text-dark-100 dark:text-light-900 max-sm:hidden">
+          Stack <span className="text-primary-500">Underflow</span>
+        </p>
+      </a>
+
       <div className="relative w-full max-w-[600px] max-lg:hidden">
-        <div className="background-light800 relative flex min-h-[35px] grow items-center gap-1 rounded-xl px-4">
+        <div className="background-light800_darkgradient min-h-[50px] relative flex  grow items-center gap-1 rounded-xl px-4">
           <img
             src="/assets/icons/search.svg"
             alt="search"
@@ -171,51 +185,27 @@ const Header = ({
           />
           <input
             id="searchBar"
-            placeholder="Search.."
+            placeholder="Search globally"
             type="text"
             value={val}
             onChange={handleInputChange}
             onKeyDown={handleKeyDown}
-            className="pl-3 paragraph-regular text-light700 no-focus placeholder border-none bg-transparent shadow-none outline-none"
+            className="flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-dark400_light700 no-focus placeholder border-none bg-transparent shadow-none outline-none"
           />
         </div>
       </div>
 
-      {/* <div className="header-buttons">
+      <div className="flex-between gap-2.5">
         {localStorage.getItem("token") ? (
           <>
             <button
-              className="header-button username-button"
-              onClick={handleProfile}
-            >
-              User Profile
-            </button>
-            <button className="header-button" onClick={handleLogout}>
-              Logout
-            </button>
-          </>
-        ) : (
-          <>
-            <button className="header-button" onClick={openLoginModal}>
-              Login
-            </button>
-            <button className="header-button" onClick={openSignUpModal}>
-              SignUp
-            </button>
-          </>
-        )}
-      </div> */}
-      <div className="flex gap-2.5">
-        {localStorage.getItem("token") ? (
-          <>
-            <button
-              className="px-3 py-1.5 bg-primary-500 text-light-900 rounded-md text-sm cursor-pointer hover:bg-primary-100 hover:shadow-light-200"
+              className="inline-flex items-center justify-center text-sm font-medium transition-colors h-10 bg-light-800 hover:text-primary-500 hover:bg-primary-100 body-medium rounded-lg px-6 py-3 capitalize shadow-none"
               onClick={handleProfile}
             >
               User Profile
             </button>
             <button
-              className="px-3 py-1.5 bg-primary-500 text-light-900 rounded-md text-sm cursor-pointer hover:bg-primary-100 hover:shadow-light-200"
+              className="inline-flex items-center justify-center text-sm font-medium transition-colors h-10 bg-light-800 hover:text-primary-500 hover:bg-primary-100 body-medium rounded-lg px-6 py-3 capitalize shadow-none"
               onClick={handleLogout}
             >
               Logout
@@ -224,26 +214,64 @@ const Header = ({
         ) : (
           <>
             <button
-              className="px-3 py-1.5 bg-primary-500 text-light-900 rounded-md text-sm cursor-pointer hover:bg-primary-100 hover:shadow-light-200"
+              className="inline-flex items-center justify-center text-sm font-medium transition-colors h-10 bg-light-800 hover:text-primary-500 hover:bg-primary-100 body-medium rounded-lg px-6 py-3 capitalize shadow-none"
               onClick={openLoginModal}
             >
               Login
             </button>
             <button
-              className="px-3 py-1.5 bg-primary-500 text-light-900 rounded-md text-sm cursor-pointer hover:bg-primary-100 hover:shadow-light-200"
+              className="inline-flex items-center justify-center text-sm font-medium transition-colors h-10 bg-light-800 hover:text-primary-500 hover:bg-primary-100 body-medium rounded-lg px-6 py-3 capitalize shadow-none"
               onClick={openSignUpModal}
             >
-              SignUp
+              Sign Up
             </button>
           </>
         )}
+        <div className="sm:hidden">
+          <Sheet>
+            <SheetTrigger>
+              <img
+                src="/assets/icons/hamburger.svg"
+                alt="Hamburger Icon"
+                width={24}
+                height={24}
+                className="invert-colors cursor-pointer sm:hidden"
+              />
+            </SheetTrigger>
+
+            <SheetClose className="absolute top-4 right-4 cursor-pointer">
+              <SheetContent
+                side="left"
+                className="background-light900_dark200 border-none"
+              >
+                <a href="./" className="flex items-center gap-1">
+                  <img
+                    src={"/assets/images/site-logo.svg"}
+                    width={23}
+                    height={23}
+                    alt="StackUnderFlow"
+                  />
+                  <p className="h2-bold ml-2 font-spaceGrotesk text-dark-100 dark:text-light-900 sm:hidden">
+                    Stack <span className="text-primary-500">Underflow</span>
+                  </p>
+                </a>
+                <MobileNav
+                  selected={pageInstance.getSelected()}
+                  handleQuestions={commonProps.handleQuestions}
+                  handleTags={commonProps.handleTags}
+                  handleSaves={commonProps.handleSaves}
+                />
+              </SheetContent>
+            </SheetClose>
+          </Sheet>
+        </div>
       </div>
 
       <Modal
         isOpen={isSignUpModalOpen}
         onRequestClose={closeSignUpModal}
         contentLabel="User Registration"
-        className="modal-content"
+        className="flex flex-col items-stretch justify-start gap-8 will-change-transform will-change-opacity will-change-height rounded-xl bg-white transition-colors duration-200 shadow-[0px_24px_48px_rgba(0,0,0,0.16)] border border-transparent w-[25rem] max-w-[calc(100vw-5rem)] mx-7 my-0 p-[2.375rem_2rem_3rem]"
         overlayClassName="modal-overlay"
       >
         <button onClick={closeSignUpModal} className="close-button">
@@ -255,7 +283,7 @@ const Header = ({
         isOpen={isLoginModalOpen}
         onRequestClose={closeLoginModal}
         contentLabel="User Login"
-        className="modal-content"
+        className="flex flex-col items-stretch justify-start gap-8 will-change-transform will-change-opacity will-change-height rounded-xl bg-white transition-colors duration-200 shadow-[0px_24px_48px_rgba(0,0,0,0.16)] border border-transparent w-[25rem] max-w-[calc(100vw-5rem)] mx-7 my-0 p-[2.375rem_2rem_3rem]"
         overlayClassName="modal-overlay"
       >
         <button onClick={closeLoginModal} className="close-button">

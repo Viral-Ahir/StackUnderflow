@@ -36,9 +36,11 @@ const Main = ({ pageInstance, commonProps }: MainProps) => {
         handleTags={commonProps.handleTags}
         handleSaves={commonProps.handleSaves}
       />
-      <div id="right_main" className="right_main">
-        {pageInstance.getContent()}
-      </div>
+      <section className="flex min-h-screen flex-1  pt-32 px-6 py-10 max-md:pb-14 sm:px-14 ">
+        <div id="right_main" className="mx-auto w-full max-w-5xl">
+          {pageInstance.getContent()}
+        </div>
+      </section>
     </div>
   );
 };

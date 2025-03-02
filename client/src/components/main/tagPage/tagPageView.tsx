@@ -29,14 +29,8 @@ const TagPage = ({ clickTag, handleNewQuestion }: TagPageProps) => {
 
   return (
     <>
-      <div className="space_between right_padding">
-        <div className="bold_title">{tlist.length} Tags</div>
-        <div className="bold_title">All Tags</div>
-        <button className="bluebtn" onClick={handleNewQuestion}>
-          Ask a Question
-        </button>
-      </div>
-      <div className="tag_list right_padding">
+      <h1 className="h1-bold text-dark100_light900">All Tags</h1>
+      <div className="mt-12 flex flex-wrap gap-4">
         {tlist.map((t, idx) => (
           <Tag key={idx} t={t} clickTag={clickTag} />
         ))}

@@ -1,3 +1,5 @@
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 /**
  * A array of months
  */
@@ -56,4 +58,18 @@ const getDateHelper = (date: Date): string => {
   return `${day}`;
 };
 
-export { getMetaData };
+const formatAndDivideNumber = (inputNumber: number): string => {
+  if (inputNumber >= 1000000) {
+    return (inputNumber / 1000000).toFixed(1) + "M";
+  } else if (inputNumber >= 1000) {
+    return (inputNumber / 1000).toFixed(1) + "k";
+  } else {
+    return inputNumber.toString();
+  }
+};
+
+function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
+export { getMetaData, formatAndDivideNumber, cn };

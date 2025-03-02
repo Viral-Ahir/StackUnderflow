@@ -56,7 +56,7 @@ const QuestionPage = ({
         setQuestionOrder={setQuestionOrder}
         handleNewQuestion={handleNewQuestion}
       />
-      <div id="question_list" className="question_list">
+      <div id="question_list" className="mt-10 flex flex-col gap-6">
         {qlist.map((q, idx) => (
           <Question
             q={q}

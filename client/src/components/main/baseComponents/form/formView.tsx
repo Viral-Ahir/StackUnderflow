@@ -15,7 +15,7 @@ interface FormProps {
  * @returns The form component
  */
 const Form: React.FC<FormProps> = ({ children }) => {
-  return <div className="form">{children}</div>;
+  return <div className="flex w-full flex-col gap-10">{children}</div>;
 };
 
 export default Form;

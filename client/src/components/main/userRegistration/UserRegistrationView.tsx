@@ -42,10 +42,17 @@ const UserRegistrationView: React.FC<UserRegistrationViewProps> = ({
   } = useUserRegistration(onSignUp);
 
   return (
-    <div className="user-registration-container">
-      <h2>Create Your Account</h2>
-      {message && <p className="message">{message}</p>}
-      <form onSubmit={handleSubmit} className="user-registration-form">
+    <div>
+      <h2 className="box-border text-black m-0 mb-6 font-semibold text-xl leading-[1.5]">
+        Create Your Account
+      </h2>
+      {message && (
+        <p className="text-center text-sm text-red-500 mb-6">{message}</p>
+      )}
+      <form
+        onSubmit={handleSubmit}
+        className="user-registration-form text-black"
+      >
         <div className="form-group">
           <label htmlFor="username">Username:</label>
           <input
@@ -76,7 +83,10 @@ const UserRegistrationView: React.FC<UserRegistrationViewProps> = ({
             required
           />
         </div>
-        <button type="submit" className="register-button">
+        <button
+          type="submit"
+          className="primary-gradient m-0 mt-3 px-5 py-2 border-0 outline-none select-none cursor-pointer  text-white rounded-md inline-flex justify-center items-center transition-colors duration-100 font-semibold text-[0.6875rem] tracking-wide leading-none uppercase min-h-[2.25rem] w-full"
+        >
           Sign Up
         </button>
       </form>

@@ -12,7 +12,6 @@ export default class NewQuestionPageClass extends PageClass {
    * @returns - The content of the page
    */
   getContent(): React.ReactNode {
-    console.log(this);
     return <NewQuestion handleQuestions={this.handleQuestions} />;
   }
 

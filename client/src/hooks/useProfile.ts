@@ -37,7 +37,7 @@ export const useProfile = () => {
         setBio(profile.bio);
         setSavedQuestions(profile.savedQuestions || []);
       } catch (error) {
-        setMessage("Error fetching profile data");
+        setMessage("Please log in to view your profile.");
       }
     };
 

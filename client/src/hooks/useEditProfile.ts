@@ -36,7 +36,7 @@ export const useEditProfile = (handleProfile: () => void) => {
         setNewUsername(profile.username);
         setBio(profile.bio);
       } catch (error) {
-        setMessage("Error fetching profile data. Please try again later.");
+        setMessage("Please Log in to edit your profile.");
       }
     };
 

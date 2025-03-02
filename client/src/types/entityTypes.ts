@@ -19,8 +19,8 @@ interface AnswerType {
   ans_by: string;
   ans_date_time: Date;
   vote_count: number;
-  upvotes_by: UserType[];
-  downvotes_by: UserType[];
+  upvotes_by: string[];
+  downvotes_by: string[];
 }
 
 /**

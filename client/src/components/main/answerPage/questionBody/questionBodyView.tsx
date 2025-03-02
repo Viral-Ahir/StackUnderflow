@@ -30,8 +30,6 @@ interface QuestionBodyProps {
   isSaved: boolean;
   comments: CommentType[];
   voteCount: number;
-  upvotesBy: string[];
-  downvotesBy: string[];
   id: string;
   setUpdateState?: React.Dispatch<React.SetStateAction<number>>;
 }
@@ -46,8 +44,6 @@ const QuestionBody = ({
   isSaved,
   comments,
   voteCount,
-  upvotesBy,
-  downvotesBy,
   id,
   setUpdateState,
 }: QuestionBodyProps) => {
@@ -82,6 +78,9 @@ const QuestionBody = ({
           parentId={id}
           parentType={"question"}
           setUpdateState={setUpdateState}
+          isSaved={saved}
+          handleSaveQuestion={handleSaveQuestion}
+          handleUnsaveQuestion={handleUnsaveQuestion}
         />
         <div className="bold_title answer_question_view">{views} views</div>
         <div className="answer_question_text">{text}</div>
