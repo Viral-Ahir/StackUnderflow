@@ -42,7 +42,7 @@ app.get("/", (req, res) => {
   res.end();
 });
 
-// Use the controllers and routes
+// Use the controllers and routes.
 app.use("/question", questionController);
 app.use("/tag", tagController);
 app.use("/answer", answerController);
