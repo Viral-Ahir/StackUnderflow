@@ -45,7 +45,7 @@ const SideBarNav = ({
           }}
         >
           <img
-            src="/assets/icons/home.svg"
+            src="/Assets/icons/home.svg"
             alt="Questions"
             width={20}
             height={20}
@@ -71,7 +71,7 @@ const SideBarNav = ({
           }}
         >
           <img
-            src="/assets/icons/tag.svg"
+            src="/Assets/icons/tag.svg"
             alt="Tags"
             width={20}
             height={20}
@@ -97,7 +97,7 @@ const SideBarNav = ({
           }}
         >
           <img
-            src="/assets/icons/star.svg"
+            src="/Assets/icons/star.svg"
             alt="Tags"
             width={20}
             height={20}

@@ -164,7 +164,7 @@ const Header = ({
     >
       <a href="./" className="flex items-center gap-1">
         <img
-          src={"/public/assets/images/site-logo.svg"}
+          src={"/Assets/images/site-logo.svg"}
           width={23}
           height={23}
           alt="StackUnderFlow"
@@ -177,7 +177,7 @@ const Header = ({
       <div className="relative w-full max-w-[600px] max-lg:hidden">
         <div className="background-light800_darkgradient min-h-[50px] relative flex  grow items-center gap-1 rounded-xl px-4">
           <img
-            src="/assets/icons/search.svg"
+            src="/Assets/icons/search.svg"
             alt="search"
             height={24}
             width={24}
@@ -231,7 +231,7 @@ const Header = ({
           <Sheet>
             <SheetTrigger>
               <img
-                src="/assets/icons/hamburger.svg"
+                src="/Assets/icons/hamburger.svg"
                 alt="Hamburger Icon"
                 width={24}
                 height={24}
@@ -246,7 +246,7 @@ const Header = ({
               >
                 <a href="./" className="flex items-center gap-1">
                   <img
-                    src={"/assets/images/site-logo.svg"}
+                    src={"/Assets/images/site-logo.svg"}
                     width={23}
                     height={23}
                     alt="StackUnderFlow"

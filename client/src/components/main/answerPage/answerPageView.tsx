@@ -71,7 +71,7 @@ const AnswerPage = ({
         <div className="mb-8 mt-5 flex flex-wrap gap-4">
           <div className="flex-center flex-wrap  gap-1">
             <img
-              src={"/assets/icons/clock.svg"}
+              src={"/Assets/icons/clock.svg"}
               alt="clock icon"
               width={16}
               height={16}
@@ -85,7 +85,7 @@ const AnswerPage = ({
           </div>
           <div className="flex-center flex-wrap gap-1">
             <img
-              src={"/assets/icons/message.svg"}
+              src={"/Assets/icons/message.svg"}
               alt="message"
               width={16}
               height={16}
@@ -99,7 +99,7 @@ const AnswerPage = ({
           </div>
           <div className="flex-center flex-wrap gap-1">
             <img
-              src={"/assets/icons/eye.svg"}
+              src={"/Assets/icons/eye.svg"}
               alt="Views"
               width={16}
               height={16}

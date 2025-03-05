@@ -71,7 +71,7 @@ export default function Votes({
           >
             <div>Upvote</div>
             <img
-              src="/assets/icons/upvote.svg"
+              src="/Assets/icons/upvote.svg"
               alt="upvote"
               className="cursor-pointer"
             />
@@ -84,7 +84,7 @@ export default function Votes({
             onClick={() => handleVote("down")}
           >
             <img
-              src="/assets/icons/downvote.svg"
+              src="/Assets/icons/downvote.svg"
               alt="upvote"
               className="cursor-pointer"
             />
@@ -95,8 +95,8 @@ export default function Votes({
           <img
             src={
               saved
-                ? "/assets/icons/star-filled.svg"
-                : "/assets/icons/star-red.svg"
+                ? "/Assets/icons/star-filled.svg"
+                : "/Assets/icons/star-red.svg"
             }
             width={18}
             height={18}

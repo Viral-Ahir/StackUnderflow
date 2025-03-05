@@ -68,7 +68,7 @@ const Question = ({ q, clickTag, handleAnswer }: QuestionProps) => {
         <div className="flex items-center gap-4 max-sm:flex-wrap max-sm:justify-start">
           <div className="flex items-center gap-1">
             <img
-              src="/assets/icons/message.svg"
+              src="/Assets/icons/message.svg"
               alt="answer count"
               className="w-4 h-4"
             />
@@ -78,7 +78,7 @@ const Question = ({ q, clickTag, handleAnswer }: QuestionProps) => {
             </p>
           </div>
           <div className="flex items-center gap-1">
-            <img src="/assets/icons/eye.svg" alt="views" className="w-4 h-4" />
+            <img src="/Assets/icons/eye.svg" alt="views" className="w-4 h-4" />
             <p className="small-medium text-dark400_light800 flex items-center gap-1">
               {q.views}
               <span className="small-regular line-clamp-1 ">Views</span>

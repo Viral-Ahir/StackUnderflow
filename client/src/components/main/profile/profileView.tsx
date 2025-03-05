@@ -84,7 +84,7 @@ const ProfileView: React.FC<ProfileViewProps> = ({
           <div id="no_question_list" className="no_question_list">
             <div className="mt-10 flex w-full flex-col items-center justify-center">
               <img
-                src="./assets/images/light-illustration.png"
+                src="./Assets/images/light-illustration.png"
                 alt="Not-result-page"
                 width={270}
                 height={200}
