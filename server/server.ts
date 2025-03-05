@@ -32,6 +32,7 @@ app.use(
     origin: [CLIENT_URL],
   })
 );
+
 app.use(appRateLimiter);
 /**
  * Middleware to parse incoming requests
