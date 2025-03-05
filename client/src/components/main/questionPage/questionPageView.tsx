@@ -57,14 +57,15 @@ const QuestionPage = ({
         handleNewQuestion={handleNewQuestion}
       />
       <div id="question_list" className="mt-10 flex flex-col gap-6">
-        {qlist.map((q, idx) => (
-          <Question
-            q={q}
-            key={idx}
-            clickTag={clickTag}
-            handleAnswer={handleAnswer}
-          />
-        ))}
+        {Array.isArray(qlist) &&
+          qlist.map((q, idx) => (
+            <Question
+              q={q}
+              key={idx}
+              clickTag={clickTag}
+              handleAnswer={handleAnswer}
+            />
+          ))}
       </div>
       {title_text === "Search Results" && !qlist.length && (
         <div className="bold_title right_padding">No Questions Found</div>
