@@ -8,7 +8,7 @@ const router = express.Router();
  * Handler to add an answer to a question
  * @param req  The request object
  * @param res  The response object
- * @returns  The response object
+ * @returns  The response object.
  */
 const addAnswerHandler = async (
   req: AddAnswerRequest,
