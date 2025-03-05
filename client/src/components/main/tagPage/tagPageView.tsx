@@ -31,9 +31,8 @@ const TagPage = ({ clickTag, handleNewQuestion }: TagPageProps) => {
     <>
       <h1 className="h1-bold text-dark100_light900">All Tags</h1>
       <div className="mt-12 flex flex-wrap gap-4">
-        {tlist.map((t, idx) => (
-          <Tag key={idx} t={t} clickTag={clickTag} />
-        ))}
+        {Array.isArray(tlist) &&
+          tlist.map((t, idx) => <Tag key={idx} t={t} clickTag={clickTag} />)}
       </div>
     </>
   );

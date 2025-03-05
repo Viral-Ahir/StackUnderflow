@@ -164,7 +164,7 @@ const Header = ({
     >
       <a href="./" className="flex items-center gap-1">
         <img
-          src={"/assets/images/site-logo.svg"}
+          src={"/public/assets/images/site-logo.svg"}
           width={23}
           height={23}
           alt="StackUnderFlow"
