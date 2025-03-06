@@ -67,7 +67,7 @@ interface HeaderProps {
 Modal.setAppElement("#root");
 
 /**
- * Header component for the application.
+ * Header component for the application
  * @param {HeaderProps} props - Props passed to the Header component.
  * @returns {JSX.Element} The rendered Header component.
  * @description
