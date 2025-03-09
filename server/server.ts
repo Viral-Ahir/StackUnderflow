@@ -26,12 +26,14 @@ app.set("trust proxy", 1);
 /**
  * Middleware to allow cross-origin requests
  */
-app.use(
-  cors({
-    credentials: true,
-    origin: [CLIENT_URL],
-  })
-);
+// app.use(
+//   cors({
+//     credentials: true,
+//     origin: [CLIENT_URL],
+//   })
+// );
+
+app.use(cors());
 
 console.log(CLIENT_URL);
 
