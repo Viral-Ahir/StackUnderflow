@@ -13,7 +13,7 @@ const REACT_APP_API_URL =
 /**
  * Function to handle the response from the server
  * @param res the response from the server
- * @returns the response from the server
+ * @returns the response from the server.
  */
 const handleRes = (res: AxiosResponse): AxiosResponse => {
   return res;
