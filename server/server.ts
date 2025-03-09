@@ -33,6 +33,8 @@ app.use(
   })
 );
 
+console.log(CLIENT_URL);
+
 app.use(appRateLimiter);
 /**
  * Middleware to parse incoming requests
