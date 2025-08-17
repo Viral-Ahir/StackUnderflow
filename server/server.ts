@@ -17,7 +17,6 @@ const MONGO_URI: string =
   process.env.MONGO_URI || "mongodb://127.0.0.1:27017/stackUnderflow";
 const CLIENT_URL: string = process.env.CLIENT_URL || "http://localhost:3000";
 const port: number = parseInt(process.env.PORT || "8000", 10);
-
 mongoose.connect(MONGO_URI);
 
 const app: Express = express();
@@ -26,14 +25,12 @@ app.set("trust proxy", 1);
 /**
  * Middleware to allow cross-origin requests
  */
-// app.use(
-//   cors({
-//     credentials: true,
-//     origin: [CLIENT_URL],
-//   })
-// );
-
-app.use(cors());
+app.use(
+  cors({
+    credentials: true,
+    origin: [CLIENT_URL],
+  })
+);
 
 console.log(CLIENT_URL);
 
