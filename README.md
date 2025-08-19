@@ -1,37 +1,83 @@
-Here is how it looks and the features it has -
+# 🚀 Stack Underflow
 
-This is the home page -
+A **Q&A platform** inspired by Stack Overflow where users can ask, answer, upvote, and save questions.  
+Built with a modern UI, intuitive navigation, and community-driven features.
+
+---
+
+## 📸 Preview
+
+#### 🏠 Home Page
+
 ![Home Page](./client/public/Assets/images/home-page.jpg)
 
-User can log in by clicking on the log in button, and similarly sign up, and by filling the necessary information
+#### 🔐 Authentication
 
-![Login Page](./client/public/Assets/images/login-page.jpg)
-![Sign Up Page](./client/public/Assets/images/sign-up.jpg)
+- **Login**  
+  ![Login Page](./client/public/Assets/images/login-page.jpg)
+- **Sign Up**  
+  ![Sign Up Page](./client/public/Assets/images/sign-up.jpg)
 
-This is how the all questions page look like (This will be the home page of the application)-
-User can also sort the questions in this three orders - Newest, Active, Unanswered
+#### ❓ All Questions
+
+Browse all questions with sorting options: **Newest, Active, Unanswered**  
 ![Questions Page](./client/public/Assets/images/questions.jpg)
 
-User can click on the "User Profile" button in the nav bar to view and edit the profile information
-![Profile Page](./client/public/Assets/images/user-profile.jpg)
-![Profile Edit Page](./client/public/Assets/images/edit-profile.jpg)
+#### 👤 User Profile
 
-User can ask a question by clicking "Ask the Question" and fill the following details -
-![Ask a question Page 1](./client/public/Assets/images/ask-question1.jpg)
+- **View Profile**  
+  ![Profile Page](./client/public/Assets/images/user-profile.jpg)
+- **Edit Profile**  
+  ![Profile Edit Page](./client/public/Assets/images/edit-profile.jpg)
+
+#### ✍️ Ask a Question
+
+![Ask a question Page 1](./client/public/Assets/images/ask-question1.jpg)  
 ![Ask a question Page 2](./client/public/Assets/images/ask-question2.jpg)
 
-This is the All Tage page, User can click on a particular tag to go to the questions associated with that tag
+#### 🏷️ Tags
+
+View all tags and explore questions related to each.  
 ![Tag Page](./client/public/Assets/images/tags.jpg)
 
-Clicking on a particular question will take user to that particular questions page, where user can upvote, downvote, save, unsave, post comment on the question and associated answers
-![Question Page](./client/public/Assets/images/question.jpg)
-![Question Answer Page](./client/public/Assets/images/question-answer.jpg)
+#### 💬 Question Details
 
-User can post the answer by clicking on "Answer Question" button and fill necessary details
+- **Question Page**  
+  ![Question Page](./client/public/Assets/images/question.jpg)
+- **Answers & Comments**  
+  ![Question Answer Page](./client/public/Assets/images/question-answer.jpg)
+
+#### ✨ Answer a Question
+
 ![Post Answer](./client/public/Assets/images/post-answer.jpg)
 
-The saved questions can be assesed on the collections page, or on the profile page
+#### 📂 Collections
+
+Access your saved questions from the **Collections Page** or **Profile**.  
 ![Collections Page](./client/public/Assets/images/collections.jpg)
 
-Hope you liked it!
-Please reach out to ahirviral01@gmail.com for any feedback/suggestions/queries
+---
+
+## ⚡ Features
+
+✅ User Authentication – Login & Signup  
+✅ Ask Questions & Provide Answers  
+✅ Upvote / Downvote System  
+✅ Comment on Questions & Answers  
+✅ Save / Unsave Questions (Collections)  
+✅ User Profile Management (View & Edit)  
+✅ Browse by Tags  
+✅ Sort Questions by **Newest, Active, Unanswered**
+
+---
+
+## 📬 Feedback
+
+💡 Have suggestions or found a bug?  
+Reach out at **ahirviral01@gmail.com**
+
+---
+
+## ⭐ Support
+
+If you like this project, don’t forget to **star ⭐ the repo** and share it with others!
