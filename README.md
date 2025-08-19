@@ -56,6 +56,13 @@ View all tags and explore questions related to each.
 Access your saved questions from the **Collections Page** or **Profile**.  
 ![Collections Page](./client/public/Assets/images/collections.jpg)
 
+#### 📱 Responsive Design
+
+And the design is **Fully Responsive**  
+![Responsive Design 1](./client/public/Assets/images/responsive1.jpg)
+![Responsive Design 2](./client/public/Assets/images/responsive2.jpg)
+![Responsive Design 3](./client/public/Assets/images/responsive3.jpg)
+
 ---
 
 ## ⚡ Features
