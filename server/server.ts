@@ -16,6 +16,7 @@ dotenv.config();
 const MONGO_URI: string =
   process.env.MONGO_URI || "mongodb://127.0.0.1:27017/stackUnderflow";
 const CLIENT_URL: string = process.env.CLIENT_URL || "http://localhost:3000";
+console.log(CLIENT_URL);
 const port: number = parseInt(process.env.PORT || "8000", 10);
 mongoose.connect(MONGO_URI);
 
@@ -28,11 +29,14 @@ app.set("trust proxy", 1);
 app.use(
   cors({
     credentials: true,
-    origin: [CLIENT_URL],
+    origin: CLIENT_URL,
   })
 );
 
-console.log(CLIENT_URL);
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Credentials", "true");
+  next();
+});
 
 app.use(appRateLimiter);
 /**
