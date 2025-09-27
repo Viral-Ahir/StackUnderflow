@@ -1,4 +1,8 @@
 {
-  "installCommand": "npm install --legacy-peer-deps",
-  "version": 2
+  "version": 2,
+  "functions": {
+    "server.ts": {
+      "runtime": "nodejs18.x"
+    }
+  }
 }
