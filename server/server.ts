@@ -30,7 +30,7 @@ app.use(
   cors({
     credentials: true,
     origin: CLIENT_URL,
-  })
+  }),
 );
 
 app.use((req, res, next) => {

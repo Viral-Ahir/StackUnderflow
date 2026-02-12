@@ -2,7 +2,8 @@ import fs from "fs";
 import path from "path";
 
 // Define the log file path
-const logFilePath = path.join(__dirname, "activity.log");
+// const logFilePath = path.join(__dirname, "activity.log");
+const logFilePath = path.join("/tmp", "activity.log");
 
 // Function to log actions
 export const logAction = (action: string, details: string) => {
